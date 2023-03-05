@@ -2,7 +2,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopywebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // The path to the CesiumJS source code
 const cesiumSource = 'node_modules/cesium/Source';
@@ -70,11 +70,11 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html',
-            favicon: 'public/favicon.ico',
+            template: './public/index.html',
+            favicon: './public/favicon.ico',
             manifest: "./public/manifest.json"
         }),
-        new CopywebpackPlugin({
+        new CopyWebpackPlugin({
             patterns: [
                 { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
                 { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
